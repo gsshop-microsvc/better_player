@@ -91,13 +91,19 @@ class _BetterPlayerWithControlsState extends State<BetterPlayerWithControls> {
     }
 
     aspectRatio ??= 16 / 9;
-    final innerContainer = Container(
-      width: double.infinity,
-      color: betterPlayerController
-          .betterPlayerConfiguration.controlsConfiguration.backgroundColor,
-      child: AspectRatio(
-        aspectRatio: aspectRatio,
-        child: _buildPlayerWithControls(betterPlayerController, context),
+    final innerContainer = OverflowBox(
+      maxWidth: double.infinity,
+      maxHeight: MediaQuery.of(context).size.height,
+      child: FittedBox(
+        fit: BoxFit.fitHeight,
+        child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Container(
+              color: betterPlayerController.betterPlayerConfiguration
+                  .controlsConfiguration.backgroundColor,
+              child: _buildPlayerWithControls(betterPlayerController, context),
+            )),
       ),
     );
 
