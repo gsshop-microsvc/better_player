@@ -85,22 +85,22 @@ class _BetterPlayerCupertinoControlsState
 
     _wasLoading = isLoading(_latestValue);
     final controlsColumn = Column(children: <Widget>[
-      _buildTopBar(
-        backgroundColor,
-        iconColor,
-        barHeight,
-        buttonPadding,
-      ),
-      if (_wasLoading)
-        Expanded(child: Center(child: _buildLoadingWidget()))
-      else
-        _buildHitArea(),
-      _buildNextVideoWidget(),
-      _buildBottomBar(
-        backgroundColor,
-        iconColor,
-        barHeight,
-      ),
+      // _buildTopBar(
+      //   backgroundColor,
+      //   iconColor,
+      //   barHeight,
+      //   buttonPadding,
+      // ),
+      // if (_wasLoading)
+      //   Expanded(child: Center(child: _buildLoadingWidget()))
+      // else
+      //   _buildHitArea(),
+      // _buildNextVideoWidget(),
+      // _buildBottomBar(
+      //   backgroundColor,
+      //   iconColor,
+      //   barHeight,
+      // ),
     ]);
     return GestureDetector(
       onTap: () {
